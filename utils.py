@@ -175,17 +175,13 @@ def keepTheLatestOneFile(dirPath):
             sameFileswithmd5s, key=lambda ff: ff['ct'], reverse=True)
         index = 0
         for ffile in sameFileswithmd5sSorted:
+            if index == 0:
+                print('Keep the latest file:', dirPath+'/'+ffile['dir'])
             if index > 0:
                 os.remove(dirPath+'/'+ffile['dir'])
                 print(ffile['dir'], ffile['md5'], ffile['ct'],
                       ffile['mt'], ' be removed as duplicated.')
             index += 1
-
-
-imgDirs = readDirectory('F:/GitWorkspace/spider/images/scenic_spots')
-for imgDir in imgDirs:
-    keepTheLatestOneFile(
-        'F:/GitWorkspace/spider/images/scenic_spots', imgDir)
 
 
 def renameBadFiles(dir):
