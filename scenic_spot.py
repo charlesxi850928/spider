@@ -6,6 +6,7 @@ class ScenicSpot:
     mainImage = ''
     mainImageAlt = ''
     shortDesc = ''
+    address = {}
 
     def __init__(self, id, name, url, level, mainImage, mainImageAlt, shortDesc):
         self.id = id
@@ -17,19 +18,38 @@ class ScenicSpot:
         self.shortDesc = shortDesc
 
 
+class Address:
+    address = ''
+    country = ''
+    province = ''
+    cityCode = ''
+    city = ''
+    district = ''
+    adcode = ''
+    location = ''
+
+    def __init__(self, address, country, province, cityCode, city, district, adcode, location):
+        self.address = address
+        self.country = country
+        self.province = province
+        self.cityCode = cityCode
+        self.city = city
+        self.district = district
+        self.adcode = adcode
+        self.location = location
+
+
 class OneCityTop10ScenicSpot:
     id = ''
-    scenicSpotID = ''
     cityName = ''
     keywords = ''
     scenicSpots = []
 
-    def __init__(self, id, cityName, keywords, scenicSpots, scenicSpotID):
+    def __init__(self, id, cityName, keywords, scenicSpots):
         self.id = id
         self.cityName = cityName
         self.keywords = keywords
         self.scenicSpots = scenicSpots
-        self.scenicSpotID = scenicSpotID
 
 
 class Image:

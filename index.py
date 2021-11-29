@@ -237,7 +237,7 @@ def strippedOneCityTop10ScenicSopts(url):
         pass
     if reGenerate:
         oneCityTop10ScenicSpot = OneCityTop10ScenicSpot(
-            mainId, title, keywords, scenicSpots, mainId)
+            mainId, title, keywords, scenicSpots)
         jsonStr = json.dumps(
             oneCityTop10ScenicSpot, ensure_ascii=False, default=lambda o: o.__dict__, sort_keys=True, indent=4)
         writeFile('F:/GitWorkspace/spider/data',
