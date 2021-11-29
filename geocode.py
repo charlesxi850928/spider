@@ -88,8 +88,10 @@ def main():
     files = readDirectory(dir)
     index = 0
     for file in files:
-        if file == 'scenic_spots' or file == '1_TOP_10_LIST.json':
+        if file == 'scenic_spots' or file == '1_TOP_10_LIST.json' or file == 'withaddress':
             # print(file)
+            continue
+        if os.path.exists(dir+"/withaddress/"+file):
             continue
         # if index > 0:
         #     break
